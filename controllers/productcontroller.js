@@ -8,7 +8,7 @@ const createproduct = async (req,res)=>{
     try{
         const {name,phone,age,gender,aadhar,blood} = (req.body)
 
-        if(!name || !phone || !age || !gender || ! aadhar || !blood){
+        if(!name || !blood){
             res.status(400)
             throw new Error('Invalid data')
            
