@@ -2,33 +2,42 @@ const mongoose = require('mongoose') // imported mongoose
 
 const studentschema = mongoose.Schema({   // creating schema for student model
 
-    name:{
+//     name:{
+//         type:String,
+//         required:true,
+//     },
+//     rollno:{
+//         type:String,
+//         required:true,
+//     },
+//     tam:{
+//         type:Number,
+//         required:false,
+//     },
+//     eng:{
+//         type:Number,
+//         required:false,
+//     },
+//     mat:{
+//         type:Number,
+//         required:false,
+//     },
+//     aadhar:{
+//         type:Number,
+//         required:true,
+//     },
+//     pan:{
+//         type:String,
+//         required:true,
+//     },
+// },
+    jobid:{
         type:String,
-        required:true,
+        require : true,
     },
-    rollno:{
+    jobname:{
         type:String,
-        required:true,
-    },
-    tam:{
-        type:Number,
-        required:false,
-    },
-    eng:{
-        type:Number,
-        required:false,
-    },
-    mat:{
-        type:Number,
-        required:false,
-    },
-    aadhar:{
-        type:Number,
-        required:true,
-    },
-    pan:{
-        type:String,
-        required:true,
+        required: true,
     },
 },
     {
