@@ -1,5 +1,5 @@
 const detail = require('../models/detailmodel')
-
+// const { post } = require('../routes/studentroute')
 // post method
 const createdetail = async(req,res)=>{
     try{
@@ -68,13 +68,23 @@ const getbyiddetail = async(req,res)=>{
         res.status(500).json({message:error.message})
     }
 }
+// get method for customer detail 
+const customerdetail = async(req,res)=>{
+    try{
+        const customerdetails = await detail.find().populate('customer').exec()
+        res.json(customerdetails)
+    }catch(error){
+        console.log(error)
+        res.status(500).json({message: 'Internal Server Error'})
+    }
+}
 
 
 
-
-module.exports =  {createdetail,
+module.exports =  {createdetail, 
     getdetail,
     updatedetail,
     deletedetail,
-    getbyiddetail
+    getbyiddetail,
+    customerdetail
 }

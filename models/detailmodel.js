@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
-
+const { Schema } = mongoose; 
+const customer = require('../models/customermodel')
 const detailSchema = mongoose.Schema({
 
     name: {
@@ -15,7 +16,7 @@ const detailSchema = mongoose.Schema({
         type: String,
         require:true
       },
-    /*  description: {
+      description: {
         type: String,
         required:false
       },
@@ -29,51 +30,32 @@ const detailSchema = mongoose.Schema({
         required: true,
         
       },
-      phone:{
-        type:Number,
-        required:false,
+      customer: {
+       type: Schema.Types.ObjectId,
+        ref: 'customermodel',            
+        required: true,
       },
-      email:{
-        type:String,
-        required:true,
-      }
      
 },
     {
         timestamps:true
     },
-    {
-    shopname :{
-      type:String,
-      required:true,
-    },
-    pname:{
-      type:String,
-      required:true,
-    },
-    quantity:{
-      type:Number,
-      required:true,
-    },
-    price:{
-      type:Number,
-      required:true,
-    }
-    }
+ 
 )
 
-   name:{
-      type : String,
-      required: true
-   },
-   image:{
-    type:String,
-    required:false
-   }
-    */
+//    name:{
+//       type : String,
+//       required: true
 
-  }
-)
+//    },
+//    image:{
+//     type:String,
+//     required:false
+//    }
+    
+
+//   }
+// )
 
 const detailmodel = mongoose.model('detailmodel',detailSchema)
 

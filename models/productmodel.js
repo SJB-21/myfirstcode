@@ -1,14 +1,11 @@
 const mongoose = require('mongoose')
 
 const productScheme = mongoose.Schema({
-    firstname:{
+    name:{
         type: String,
         required:true,
     },
-    lastname:{
-        type : String,
-        required:false,
-    },
+    
     phone:{
         type: Number,
         required:false,
@@ -21,7 +18,7 @@ const productScheme = mongoose.Schema({
         type:String,
         required: true,
     },
-    blood_group:{
+    blood:{
         type :String,
         required:true,
     }, 

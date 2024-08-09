@@ -7,7 +7,8 @@ const { createdetail,
     getdetail,
     updatedetail,
     deletedetail,
-    getbyiddetail
+    getbyiddetail,
+    customerdetail
 
 } = require('../controllers/detailcontroller')
 
@@ -16,5 +17,6 @@ detailroute.get('/',getdetail)
 detailroute.put('/:id',updatedetail)
 detailroute.delete('/:id',deletedetail)
 detailroute.get('/:id',getbyiddetail)
+detailroute.get('/',customerdetail)
 
 module.exports = detailroute
