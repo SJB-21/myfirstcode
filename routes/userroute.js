@@ -8,6 +8,4 @@ const {createuser,login} = require('../controllers/usercontroller')
 userroute.post('/create',createuser)
 userroute.post('/login', login)
 
-
-
 module.exports = userroute

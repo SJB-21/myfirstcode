@@ -6,11 +6,12 @@ const studentroute = require('./routes/studentroute')
 const detailroute = require('./routes/detailroute')
 const productroute = require('./routes/productroute')
 const userroute = require('./routes/userroute')
-// const loginroute = require('./routes/loginroute')
+const teacherroute = require('./routes/teacherroute')
+const collegeroute = require('./routes/collegeroute')
 const user = require('./models/usermodel')
-const bcrypt = require('bcrypt')
+
 const jwt = require('jsonwebtoken') 
-const {authenticatetoken} = require('./controllers/usercontroller')
+const {authenticatetoken} = require('./controllers/usercontroller')  // Importing authenticate token [Is a middleware function]
 
 // const errorhandling = require('./middleware/errorhandler')
 // const errorMiddleware = require('./middleware/errorhandler')
@@ -30,11 +31,13 @@ const corsOptions = {
 app.use(cors(corsOptions))  // Calling coreOptions  
 
 
-app.use('/api/student' ,authenticatetoken, studentroute)  // calling studentroute
+app.use('/api/student' , authenticatetoken,studentroute)  // calling studentroute and i will use authenticate token 
 app.use('/api/detail' ,authenticatetoken, detailroute)  // calling detailroute
-app.use('/api/product',authenticatetoken, productroute)
+app.use('/api/product', productroute)
+app.use('/api/teacher',teacherroute)
+app.use('/api/college',collegeroute)
 app.use('/api/user',userroute)
-//app.use('/api/login',loginroute)
+
 
 
 // Cron scheduling task eg..

@@ -147,7 +147,7 @@ app.post('/detail',async(req,res)=>{
         res.status(200).json(details)
         console.log(details)
     }catch(error){
-        console.log(error)
+        console.log(error)  
         res.status(500).json({message: error.message})
     }
 })

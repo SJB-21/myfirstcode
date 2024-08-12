@@ -43,19 +43,6 @@ const detailSchema = mongoose.Schema({
  
 )
 
-//    name:{
-//       type : String,
-//       required: true
-
-//    },
-//    image:{
-//     type:String,
-//     required:false
-//    }
-    
-
-//   }
-// )
 
 const detailmodel = mongoose.model('detailmodel',detailSchema)
 
